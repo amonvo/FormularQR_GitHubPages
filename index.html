@@ -2,27 +2,32 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulář zájmu</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background: #f2f2f2;
-      padding: 40px;
-      text-align: center;
+      margin: 0;
+      padding: 20px;
     }
 
     h2 {
+      text-align: center;
       color: #333;
     }
 
     form {
       background: white;
-      padding: 30px;
-      margin: 0 auto;
+      padding: 25px;
       border-radius: 8px;
-      max-width: 400px;
+      max-width: 500px;
+      margin: 0 auto;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-      text-align: left;
     }
 
     label {
@@ -35,26 +40,49 @@
     input[type="email"],
     textarea {
       width: 100%;
-      padding: 8px;
+      padding: 10px;
       margin-top: 5px;
       border-radius: 4px;
       border: 1px solid #ccc;
-      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
     }
 
     button {
       margin-top: 20px;
+      width: 100%;
       background-color: #4CAF50;
       color: white;
       border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      border-radius: 4px;
+      padding: 12px;
       font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
     }
 
     button:hover {
       background-color: #45a049;
+    }
+
+    @media (max-width: 600px) {
+      form {
+        padding: 20px;
+        margin: 10px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      input,
+      textarea,
+      button {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
@@ -63,9 +91,16 @@
   <form action="https://formsubmit.co/vojtech.amon@seznam.cz" method="POST">
     <input type="hidden" name="_next" value="https://vojto.github.io/FormularQR_GitHubPages/thank-you.html">
     <input type="hidden" name="_subject" value="Nový zájemce z formuláře">
-    <label>Jméno:<input type="text" name="jmeno" required></label>
-    <label>Email:<input type="email" name="email" required></label>
-    <label>Zpráva:<textarea name="zprava"></textarea></label>
+
+    <label for="jmeno">Jméno:</label>
+    <input type="text" name="jmeno" id="jmeno" required>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required>
+
+    <label for="zprava">Zpráva:</label>
+    <textarea name="zprava" id="zprava"></textarea>
+
     <button type="submit">Odeslat</button>
   </form>
 </body>
