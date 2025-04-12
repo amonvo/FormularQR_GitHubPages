@@ -3,15 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <title>Formulář zájmu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    form {
+      background: white;
+      padding: 30px;
+      margin: 0 auto;
+      border-radius: 8px;
+      max-width: 400px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
   <h2>Odešli nám svůj kontakt</h2>
   <form action="https://formsubmit.co/vojtech.amon@seznam.cz" method="POST">
-    <input type="hidden" name="_next" value="https://amonvo.github.io/FormularQR_GitHubPages/thank-you.html">
+    <input type="hidden" name="_next" value="https://vojto.github.io/FormularQR_GitHubPages/thank-you.html">
     <input type="hidden" name="_subject" value="Nový zájemce z formuláře">
-    <label>Jméno:<br><input type="text" name="jmeno" required></label><br><br>
-    <label>Email:<br><input type="email" name="email" required></label><br><br>
-    <label>Zpráva:<br><textarea name="zprava"></textarea></label><br><br>
+    <label>Jméno:<input type="text" name="jmeno" required></label>
+    <label>Email:<input type="email" name="email" required></label>
+    <label>Zpráva:<textarea name="zprava"></textarea></label>
     <button type="submit">Odeslat</button>
   </form>
 </body>
